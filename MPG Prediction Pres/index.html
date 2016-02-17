@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MPG Prediction Presentation</title>
+  <meta charset="utf-8">
+  <meta name="description" content="MPG Prediction Presentation">
+  <meta name="author" content="Wesley E.">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>MPG Prediction Presentation</h1>
+    <h2></h2>
+    <p>Wesley E.<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Purpose of MPG Prediction App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Allows users to input the weight of their car and find out a miles per gallon estimate for
+ their car.They can also filter on transmission type and number of cylinders so only similar
+ cars are used for comparison calculation. 
+ Uses the mtcars dataset with 32 cars for Motor Trend magazine 1972 from R.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Predictions</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Predictions are based on the mtcars dataset</li>
+<li>Linear Model is built from similar cars as defined by user</li>
+<li>MPG prediction is done to the nearest whole number</li>
+<li>Example for predicting car with 3000 lbs MPG is below:</li>
+</ol>
+
+<pre><code class="r">  data(mtcars)
+  wt&lt;-3
+  fit&lt;-lm(mpg~wt, data=mtcars)
+  round(predict(fit,newdata=wt),0)
+</code></pre>
+
+<pre><code>##  1 
+## 21
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Inputs</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>The User Inputs the Weight of the Car they want to predict MPG for</li>
+<li>The User Inputs the restrictions on the data set to ensure similar cars are used.</li>
+<li>Weight Range of similar Cars</li>
+<li>Number of Cylinders of similar Cars</li>
+<li>Whether the car is automatic or manual</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Scatter Plot and Table</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>The Scatter Plot Displays the data points that have not been filtered out</li>
+<li>Scatter Plot colors correspond to the number of cylinders of the cars</li>
+<li>The Table shows the exact data points that are still being included</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Purpose of MPG Prediction App'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Predictions'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Inputs'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Scatter Plot and Table'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
